@@ -4,15 +4,14 @@ import com.luxoft.booking.model.util.TripType;
 
 public class Trip {
 	private TripType type;
-	private double cost;
 	private Hotel hotel;
+	private Double cost;
+	private Double discount;
+	private Double finalPrice;
 	private CreditCard creditCard;
-	private double discount;
-	private double finalPrice;
 	private String details;
-	private String currency;
+	private Character currencySymbol;
 
-	
 	// Setters and getters
 	public TripType getType() {
 		return type;
@@ -22,11 +21,11 @@ public class Trip {
 		this.type = type;
 	}
 
-	public double getCost() {
+	public Double getCost() {
 		return cost;
 	}
 
-	public void setCost(double cost) {
+	public void setCost(Double cost) {
 		this.cost = cost;
 	}
 
@@ -46,19 +45,19 @@ public class Trip {
 		this.creditCard = creditCard;
 	}
 
-	public double getDiscount() {
+	public Double getDiscount() {
 		return discount;
 	}
 
-	public void setDiscount(double discount) {
+	public void setDiscount(Double discount) {
 		this.discount = discount;
 	}
 
-	public double getFinalPrice() {
+	public Double getFinalPrice() {
 		return finalPrice;
 	}
 
-	public void setFinalPrice(double finalPrice) {
+	public void setFinalPrice(Double finalPrice) {
 		this.finalPrice = finalPrice;
 	}
 
@@ -70,11 +69,11 @@ public class Trip {
 		this.details = details;
 	}
 
-	public String getCurrency() {
-		return currency;
+	public Character getCurrencySymbol() {
+		return currencySymbol;
 	}
 
-	public void setCurrency(String currency) {
-		this.currency = currency;
+	public void setCurrencySymbol(Character currencySymbol) {
+		this.currencySymbol = currencySymbol;
 	}
 }

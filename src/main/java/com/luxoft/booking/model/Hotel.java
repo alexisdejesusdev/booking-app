@@ -3,12 +3,11 @@ package com.luxoft.booking.model;
 public class Hotel {
 	private String id;
 	private String name;
-	private boolean isMerchant;
+	private Boolean isMerchant;
 	private String details;
 	private String link;
-	private float discount; 
+	private Float discount;
 
-	
 	// Setter and getters
 	public String getId() {
 		return id;
@@ -26,11 +25,11 @@ public class Hotel {
 		this.name = name;
 	}
 
-	public boolean isMerchant() {
+	public Boolean getIsMerchant() {
 		return isMerchant;
 	}
 
-	public void setMerchant(boolean isMerchant) {
+	public void setIsMerchant(Boolean isMerchant) {
 		this.isMerchant = isMerchant;
 	}
 
@@ -50,11 +49,11 @@ public class Hotel {
 		this.link = link;
 	}
 
-	public float getDiscount() {
+	public Float getDiscount() {
 		return discount;
 	}
 
-	public void setDiscount(float discount) {
+	public void setDiscount(Float discount) {
 		this.discount = discount;
 	}
 }

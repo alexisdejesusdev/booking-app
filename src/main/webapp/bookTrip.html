@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Booking Trip</title>
+
+<!-- Include style sheets -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Import external libraries -->
+<script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
+
+<!-- Import custom libraries -->
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+</head>
+<body>
+
+	<div class="container">
+		<h2>Book Trip</h2>
+		<div class="field-set">
+			<div>
+				<label for="type">Trip type:</label>
+			</div>
+			<div>
+				<select id="type">
+					<option value="HOTEL">Hotel</option>
+				</select>
+			</div>
+		</div>
+		<div class="field-set">
+			<div>
+				<label for="hotelName">Hotel name:</label>
+			</div>
+			<div>
+				<select id="hotelName"
+					placeholder="Select the hotel you wish to book your trip for..."></select>
+			</div>
+		</div>
+		<div class="field-set">
+			<div>
+				<label for="cost">Cost:</label>
+			</div>
+			<div>
+				<input type="text" id="cost" />
+			</div>
+		</div>
+		<div class="field-set hidden">
+			<div>
+				<label for="discount">Discount:</label>
+			</div>
+			<div>
+				<input type="text" id="discount" />
+			</div>
+		</div>
+		<div class="field-set hidden">
+			<div>
+				<label for="finalPrice">Final price:</label>
+			</div>
+			<div>
+				<input type="text" id="finalPrice" />
+			</div>
+		</div>
+		<div class="field-set">
+			<div>
+				<label for="creditCardNumber">Credit card number:</label>
+			</div>
+			<div>
+				<input type="text" id="creditCardNumber" />
+			</div>
+		</div>
+		<div class="field-set">
+			<div>
+				<label for="details">Details:</label>
+			</div>
+			<div>
+				<textarea id="details"></textarea>
+			</div>
+		</div>
+		<div class="field-set">
+			<div>
+				<label for="currencySymbol">Currency symbol:</label>
+			</div>
+			<div>
+				<input type="text" id="currencySymbol" />
+			</div>
+		</div>
+		<div>
+			<input type="button" id="bookTrip" onclick="bookTrip();"
+				value="Book Trip" />
+		</div>
+
+		<div>
+			<!-- Go back button -->
+			<a href="index.html" class="btn">Go back.</a>
+		</div>
+	</div>
+
+</body>
+</html>
