@@ -1,5 +1,11 @@
 package com.luxoft.booking.model.util;
 
+/**
+ * Utility class for trip types.
+ * 
+ * @author Alexis De Jesús
+ *
+ */
 public enum TripType {
 	HOTEL("hotel");
 

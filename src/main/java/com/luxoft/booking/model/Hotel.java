@@ -1,5 +1,11 @@
 package com.luxoft.booking.model;
 
+/**
+ * Model for a hotel.
+ * 
+ * @author Alexis De Jesús
+ *
+ */
 public class Hotel {
 	private String id;
 	private String name;
@@ -7,6 +13,33 @@ public class Hotel {
 	private String details;
 	private String link;
 	private Float discount;
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean equal = false;
+
+		if (obj instanceof Hotel) {
+			if (this.id.equals(((Hotel) obj).getId())) {
+				equal = true;
+			}
+		}
+
+		return equal;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder("{");
+		sb.append("id: ").append(this.id).append(", ");
+		sb.append("name: ").append(this.name).append(", ");
+		sb.append("isMerchant: ").append(this.isMerchant).append(", ");
+		sb.append("details: ").append(this.details).append(", ");
+		sb.append("link: ").append(this.link).append(", ");
+		sb.append("discount: ").append(this.discount);
+		sb.append("}");
+		
+		return sb.toString();
+	}
 
 	// Setter and getters
 	public String getId() {

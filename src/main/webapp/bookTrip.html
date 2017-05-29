@@ -12,12 +12,13 @@
 
 <!-- Import custom libraries -->
 <script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/validation.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 
 </head>
-<body>
+<body onload="initBooking();">
 
-	<div class="container">
+	<div class="container" id="bookingForm">
 		<h2>Book Trip</h2>
 		<div class="field-set">
 			<div>
@@ -31,11 +32,12 @@
 		</div>
 		<div class="field-set">
 			<div>
-				<label for="hotelName">Hotel name:</label>
+				<label for="hotel">Hotel name:</label>
 			</div>
 			<div>
-				<select id="hotelName"
-					placeholder="Select the hotel you wish to book your trip for..."></select>
+				<select id="hotel"
+					placeholder="Select the hotel you wish to book your trip for..."
+					onchange="resolveHotelSpecifics();"></select>
 			</div>
 		</div>
 		<div class="field-set">
@@ -43,23 +45,23 @@
 				<label for="cost">Cost:</label>
 			</div>
 			<div>
-				<input type="text" id="cost" />
+				<input type="text" id="cost" readonly="readonly" />
 			</div>
 		</div>
-		<div class="field-set hidden">
+		<div class="field-set">
 			<div>
 				<label for="discount">Discount:</label>
 			</div>
 			<div>
-				<input type="text" id="discount" />
+				<input type="text" id="discount" readonly="readonly" />
 			</div>
 		</div>
-		<div class="field-set hidden">
+		<div class="field-set">
 			<div>
 				<label for="finalPrice">Final price:</label>
 			</div>
 			<div>
-				<input type="text" id="finalPrice" />
+				<input type="text" id="finalPrice" readonly="readonly" />
 			</div>
 		</div>
 		<div class="field-set">
@@ -67,7 +69,15 @@
 				<label for="creditCardNumber">Credit card number:</label>
 			</div>
 			<div>
-				<input type="text" id="creditCardNumber" />
+				<input type="text" id="creditCardNumber" maxlength="16" />
+			</div>
+		</div>
+		<div class="field-set">
+			<div>
+				<label for="currencySymbol">Currency symbol:</label>
+			</div>
+			<div>
+				<input type="text" id="currencySymbol" maxlength="1" />
 			</div>
 		</div>
 		<div class="field-set">
@@ -76,14 +86,6 @@
 			</div>
 			<div>
 				<textarea id="details"></textarea>
-			</div>
-		</div>
-		<div class="field-set">
-			<div>
-				<label for="currencySymbol">Currency symbol:</label>
-			</div>
-			<div>
-				<input type="text" id="currencySymbol" />
 			</div>
 		</div>
 		<div>
@@ -97,5 +99,22 @@
 		</div>
 	</div>
 
+	<div class="container hidden" id="bookingSuccess">
+		<span>Your trip was booked successfully with the following id:
+		</span> <b id="bookingSuccessId"></b>
+		
+		<br /><span>Trip type: </span><span id="bookingSuccessType"></span>
+		<br /><span>Hotel name: </span><span id="bookingSuccessHotelName"></span>
+		<br /><span>Cost: </span><span id="bookingSuccessCost"></span>
+		<br /><span>Discount: </span><span id="bookingSuccessDiscount"></span>
+		<br /><span>Final price: </span><span id="bookingSuccessFinalPrice"></span>
+		<br /><span>Credit card number: </span><span id="bookingSuccessCreditCardNumber"></span>
+		<br /><span>Details: </span><span id="bookingSuccessDetails"></span>
+		
+		<div>
+			<!-- Go back button -->
+			<a href="bookTrip.html" class="btn">Go back.</a>
+		</div>
+	</div>
 </body>
 </html>

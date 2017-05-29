@@ -1,5 +1,11 @@
 package com.luxoft.booking.model;
 
+/**
+ * Model for a customer.
+ * 
+ * @author Alexis De Jesús
+ *
+ */
 public class Customer {
 	private String id;
 	private String fullName;

@@ -17,6 +17,10 @@
 		<spring.ws.version>2.4.0.RELEASE</spring.ws.version>
 
 		<jackson.version>2.6.1</jackson.version>
+		
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.6.2</slf4j.version>
+		
 		<junit.version>4.12</junit.version>
 
 		<!-- Default compilation and construction versions -->
@@ -60,7 +64,6 @@
 			<scope>test</scope>
 		</dependency>
 
-
 		<!-- Jackson -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -72,6 +75,25 @@
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-joda</artifactId>
 			<version>${jackson.version}</version>
+		</dependency>
+
+		<!-- Slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
 		</dependency>
 
 		<!-- jUnit -->

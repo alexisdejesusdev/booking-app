@@ -2,6 +2,8 @@ package com.luxoft.booking.controller.exception;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -19,6 +21,8 @@ import com.luxoft.booking.model.util.Message;
  */
 @ControllerAdvice
 public class ExceptionHandlingController {
+	private final Log logger = LogFactory.getLog(getClass());
+
 	/**
 	 * Manages all ControlledException and wraps them into a standardized model
 	 * for the front-end to process.
@@ -34,9 +38,9 @@ public class ExceptionHandlingController {
 		// Get the message of the returned exception to the front end
 		Message message = new Message(e.getMessage());
 
-		// TODO: Log the exception's stack trace temporarily for development
-		// purposes
-		e.printStackTrace();
+		if (this.logger.isErrorEnabled()) {
+			this.logger.error("A ControlledException was caught [" + e + "]. ");
+		}
 
 		return message;
 
@@ -53,13 +57,36 @@ public class ExceptionHandlingController {
 	@ResponseBody
 	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
 	@ExceptionHandler({ Exception.class })
-	public Message handleError(HttpServletRequest request, Exception e) {
+	public Message handleException(HttpServletRequest request, Exception e) {
 		// Get the message of the returned exception to the front end
 		Message message = new Message(e.getMessage());
 
-		// TODO: Log the exception's stack trace temporarily for development
-		// purposes
-		e.printStackTrace();
+		if (this.logger.isErrorEnabled()) {
+			this.logger.error("An unexpected Exception was caught [" + e + "]. ");
+		}
+
+		return message;
+
+	}
+
+	/**
+	 * Manages all RuntimeException and wraps them into a standardized model for
+	 * the front-end to process.
+	 * 
+	 * @param request
+	 * @param e
+	 * @return
+	 */
+	@ResponseBody
+	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+	@ExceptionHandler({ RuntimeException.class })
+	public Message handleRuntimeException(HttpServletRequest request, Exception e) {
+		// Get the message of the returned exception to the front end
+		Message message = new Message(e.getMessage());
+
+		if (this.logger.isErrorEnabled()) {
+			this.logger.error("An unexpected RuntimeException was caught [" + e + "]. ");
+		}
 
 		return message;
 
