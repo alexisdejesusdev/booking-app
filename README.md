@@ -58,7 +58,7 @@ Image [here](https://drive.google.com/open?id=0B0VKN70UtF7ndFlDUGVUMDVvQU0)
 
 [tripRecords.json](https://drive.google.com/open?id=0B0VKN70UtF7nUnFnOUNFM2VHVTg)
 
-10. IMPORTANT: After copying both files, you MUST modify the file persistence.properties and update the property "persistence.path" to the path value where the files where put. 
+10. IMPORTANT: After copying both files, you MUST modify the file src/main/resources/config/persistence.properties and update the property "persistence.path" to the path value where the files where put. 
 
 E.g. "persistence.path = C:\\apache-tomcat-8.0.32\\temp"
 
