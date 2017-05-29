@@ -20,7 +20,7 @@ You must have Apache Maven 3 or above installed, you can download it from [here]
 To get a development env running you should follow the next steps:
 
 1. Download or clone the git repository into your local machine.
-[https://github.com/alexisdejesusdev/prototype-app.git](https://github.com/alexisdejesusdev/prototype-app.git)
+[https://github.com/alexisdejesusdev/booking-app.git](https://github.com/alexisdejesusdev/booking-app.git)
 
 2. Open the eclipse executable and import the maven project from the filesystem where it was downloaded or cloned.
 
@@ -81,7 +81,7 @@ To build and deploy the whole project and test it outside eclipse the next steps
 
 2. Run the command mvn clean install.
 
-3. After the process is finished move to the target folder created as a result of the previous step and copy the file called prototype-app.war.
+3. After the process is finished move to the target folder created as a result of the previous step and copy the file called booking-app.war.
 
 4. Paste the copied file to the webapps folder of the tomcat installation directory.
 
